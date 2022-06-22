@@ -1,0 +1,25 @@
+.receipt {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 24px 10px 24px;
+}
+
+.receipt-price {
+  text-align: right;
+  flex: 1;
+}
+
+.receipt-name {
+  text-align: left;
+  flex: 1;
+}
+
+.bill {
+  vertical-align: middle;
+  line-height: 60px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0;
+}

@@ -1,0 +1,16 @@
+<h1 class="bill">€{{ total | number: "1.2-2" }}</h1>
+<mat-divider></mat-divider>
+<div class="receipt">
+  <div class="receipt-name"><b>Item</b></div>
+  <div class="receipt-amount"><b>Servings</b></div>
+  <div class="receipt-price"><b>Price</b></div>
+</div>
+<mat-divider></mat-divider>
+<div *ngFor="let receipt of receipts" class="receipt-container">
+  <div class="receipt" *ngIf="userId">
+    <div class="receipt-name">{{ receipt.name }}</div>
+    <div class="receipt-amount">x{{ receipt.dibs.get(userId) }}</div>
+    <div class="receipt-price">€{{ receipt.price | number: "1.2-2" }}</div>
+  </div>
+  <mat-divider></mat-divider>
+</div>

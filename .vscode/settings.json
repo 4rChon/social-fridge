@@ -1,0 +1,8 @@
+{
+  "eslint.lintTask.options": "./src/*",
+  "eslint.lintTask.enable": true,
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.useESLintClass": true,
+  "editor.formatOnSave": true
+}

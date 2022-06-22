@@ -1,0 +1,49 @@
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-progress-bar
+      *ngIf="isLoading"
+      [mode]="'indeterminate'"
+      [color]="'accent'"
+    ></mat-progress-bar>
+    <mat-panel-title>{{ food.name }}</mat-panel-title>
+    <mat-panel-description>
+      <app-dec-dibs-button [food]="food"></app-dec-dibs-button>
+      <div class="dibs-count">
+        {{ this.food.dibs.get(this.currentUserId) ?? 0 }}
+      </div>
+      <app-inc-dibs-button [food]="food"></app-inc-dibs-button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="panel-body">
+    <mat-divider></mat-divider>
+    <div class="description">
+      <div>
+        <div>Price</div>
+        <div>€{{ food.price | number: "1.2-2" }}</div>
+      </div>
+      <div>
+        <div>Amount</div>
+        <div>{{ food.units }} {{ unitType }}</div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="actions">
+      <app-toggle-lock-button
+        [isOwner]="isOwner"
+        [food]="food"
+        [(isLoading)]="isLoading"
+      >
+      </app-toggle-lock-button>
+      <app-edit-button
+        [isOwner]="isOwner"
+        [food]="food"
+        [(isLoading)]="isLoading"
+      ></app-edit-button>
+      <app-delete-button
+        [isOwner]="isOwner"
+        [foodUid]="food.uid"
+        [(isLoading)]="isLoading"
+      ></app-delete-button>
+    </div>
+  </div>
+</mat-expansion-panel>

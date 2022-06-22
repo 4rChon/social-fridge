@@ -1,0 +1,45 @@
+mat-progress-bar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+mat-panel-description {
+  justify-content: flex-end;
+}
+
+.mat-expansion-panel-header-title {
+  align-self: center;
+  margin: 0;
+}
+
+.mat-expansion-panel-header-description {
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+}
+
+.description {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions {
+  justify-content: center;
+  display: flex;
+  margin-top: 16px;
+}
+
+.dibs-count {
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+}

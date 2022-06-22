@@ -1,0 +1,5 @@
+<app-side-nav
+  *ngIf="(isHandset$ | async) === false"
+  [title]="title"
+></app-side-nav>
+<app-bottom-nav *ngIf="isHandset$ | async" [title]="title"></app-bottom-nav>

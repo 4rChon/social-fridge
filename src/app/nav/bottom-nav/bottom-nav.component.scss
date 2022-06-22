@@ -1,0 +1,64 @@
+@use "~@angular/material" as mat;
+@use "./bottom-nav-theme" as bottom-nav;
+@use "src/theme.scss" as app;
+
+@include bottom-nav.theme(app.$app-theme);
+
+.bottomnav-container {
+  height: 100%;
+}
+
+.bottomnav {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bottomnav div {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottomnav .mat-toolbar {
+  background: inherit;
+}
+
+.bottomnav-content {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.bottomnav-button {
+  background-color: none;
+  flex-grow: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 200ms all;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  transition: 200ms all;
+}

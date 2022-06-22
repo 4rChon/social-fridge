@@ -1,0 +1,8 @@
+<button
+  mat-icon-button
+  [disabled]="!isOwner || isLoading"
+  [color]="'primary'"
+  (click)="openDialog()"
+>
+  <mat-icon class="material-icons">edit</mat-icon>
+</button>

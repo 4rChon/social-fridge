@@ -1,0 +1,18 @@
+@use "~@angular/material" as mat;
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+@import "./theme.scss";
+
+@include mat.core();
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include mat.all-component-themes($app-theme);

@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "~@angular/material" as mat;
+
+@mixin typography($theme) {
+  $typography-config: mat.get-typography-config($theme);
+
+  .bottomnav-container {
+    font-family: mat.font-family($typography-config);
+  }
+}
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $background-palette: map.get($color-config, "background");
+  $primary-palette: map.get($color-config, "primary");
+
+  .bottomnav {
+    background: mat.get-color-from-palette($background-palette, "card");
+  }
+
+  a.active,
+  a.active:hover,
+  a.active:focus {
+    color: mat.get-color-from-palette($primary-palette, 500);
+    background: mat.get-color-from-palette($background-palette, "hover");
+    transition: 200ms all;
+  }
+
+  // .fade:after {
+  //   content: "";
+  //   width: 0px;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   position: absolute;
+  //   transition: 100ms ease-out all;
+  // }
+
+  a:hover,
+  a:focus {
+    background: mat.get-color-from-palette($background-palette, "hover");
+    transition: 200ms all;
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config != null {
+    @include typography($theme);
+  }
+}

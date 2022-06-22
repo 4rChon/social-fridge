@@ -1,0 +1,71 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <mat-error>Name is required</mat-error>
+      <input
+        matInput
+        placeholder="Product Name"
+        id="name"
+        type="text"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Price</mat-label>
+      <mat-error>Price is required</mat-error>
+      <span matPrefix>€ &nbsp;</span>
+      <input matInput id="price" type="number" formControlName="price" />
+    </mat-form-field>
+    <mat-checkbox id="locked" formControlName="locked"
+      >Lock total units</mat-checkbox
+    >
+    <div formGroupName="volume">
+      <mat-form-field
+        *ngIf="itemForm.get('locked')?.value"
+        appearance="standard"
+      >
+        <mat-label>Total Units</mat-label>
+        <mat-error>Units are required</mat-error>
+        <input matInput id="units" type="number" formControlName="units" />
+      </mat-form-field>
+      <mat-form-field
+        *ngIf="!itemForm.get('locked')?.value"
+        appearance="standard"
+      >
+        <mat-label>Units per Serving</mat-label>
+        <mat-error>Units per Serving are required</mat-error>
+        <input
+          matInput
+          id="servingUnits"
+          type="number"
+          formControlName="servingUnits"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Unit Type</mat-label>
+        <mat-error>Unit Type is required</mat-error>
+        <mat-select formControlName="unitType">
+          <mat-option
+            *ngFor="let unitType of unitTypeMap | keyvalue"
+            value="{{ unitType.key }}"
+            selected
+            >{{ unitType.value.plural }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close cdkFocusInitial>Cancel</button>
+    <button
+      type="submit"
+      [disabled]="!itemForm.valid"
+      mat-stroked-button
+      [mat-dialog-close]="true"
+      [color]="'primary'"
+    >
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>

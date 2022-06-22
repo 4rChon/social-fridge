@@ -1,0 +1,13 @@
+<div class="spinner-container" *ngIf="isLoading">
+  <div>Checking authentication status...</div>
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <div class="signin-text">
+    <h2>Sign in to your account</h2>
+    <p>
+      To access the features in this app you must sign in with a google account.
+    </p>
+  </div>
+  <app-signin></app-signin>
+</div>

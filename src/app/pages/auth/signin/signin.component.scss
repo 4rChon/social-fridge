@@ -1,0 +1,33 @@
+.signin-container {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.signin-button {
+  display: block;
+  background-image: url("/assets/google/btn_google_signin_dark_normal_web@2x.png");
+  width: calc(100vw - 40px);
+  height: calc((100vw - 40px) / 4.1521739130434782608695652173913);
+  max-width: 191px;
+  max-height: 46px;
+  background-size: contain; /* Center the image */
+}
+
+.signin-button:hover {
+  cursor: pointer;
+  background-image: url("/assets/google/btn_google_signin_dark_focus_web@2x.png");
+}
+
+.signin-button:focus {
+  background-image: url("/assets/google/btn_google_signin_dark_focus_web@2x.png");
+}
+
+.signin-button:active {
+  background-image: url("/assets/google/btn_google_signin_dark_pressed_web@2x.png");
+}
+
+.signin-button:disabled {
+  background-image: url("/assets/google/btn_google_signin_dark_disabled_web@2x.png");
+}

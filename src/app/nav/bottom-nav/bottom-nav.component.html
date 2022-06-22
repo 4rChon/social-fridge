@@ -1,0 +1,29 @@
+<div class="bottomnav-container">
+  <mat-toolbar class="mat-primary">
+    <span>{{ title }}</span>
+    <span class="spacer"></span>
+    <app-signout-button></app-signout-button>
+  </mat-toolbar>
+  <div class="bottomnav-content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="bottomnav">
+    <a
+      matRipple
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="fade bottomnav-button"
+      ><mat-icon>kitchen</mat-icon>
+    </a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a
+      matRipple
+      routerLink="/receipt"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="fade bottomnav-button"
+      ><mat-icon>receipt_long</mat-icon>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<h1 class="bill">€{{ bill | number: "1.2-2" }}</h1>
+<mat-divider></mat-divider>
+<mat-accordion class="item-list">
+  <app-simple-item
+    *ngFor="let foodItem of food"
+    [food]="foodItem"
+  ></app-simple-item>
+</mat-accordion>
+<app-add-item-button></app-add-item-button>

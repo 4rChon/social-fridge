@@ -1,0 +1,9 @@
+<button
+  class="add-item-button"
+  [ngClass]="(isHandset$ | async) ? 'handset' : ''"
+  mat-mini-fab
+  [color]="'primary'"
+  (click)="openDialog()"
+>
+  <mat-icon>add</mat-icon>
+</button>

@@ -1,0 +1,8 @@
+<button
+  mat-icon-button
+  [color]="'warn'"
+  [disabled]="!isOwner || isLoading"
+  (click)="deleteFood($event, foodUid)"
+>
+  <mat-icon class="material-icons">delete</mat-icon>
+</button>
